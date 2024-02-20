@@ -188,7 +188,10 @@ class QueryConfig {
             const model = resultValidator.model
             const columnType = resultValidator.attributes[columnName].dataType
 
-            const searchValueType = searchValue.constructor.name === "number" ? "INTEGER" : searchValue.constructor.name.toUpperCase()
+            let searchValueType = searchValue.constructor.name.toUpperCase() 
+
+            if(searchValueType === "NUMBER") searchValueType = "INTEGER" 
+            if(uuidValidate(searchValue)) searchValueType = "UUID" 
 
             if (columnType !== searchValueType) throw new Error(msg.erroMsg.notValidDatatypeValue + columnType)
 
