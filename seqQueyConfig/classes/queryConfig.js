@@ -263,24 +263,6 @@ class QueryConfig {
                 });
             }
 
-
-
-
-            /*  if (!association) throw new Error(msg.erroMsg.emptyValue)
- 
-             //Valido existencia de associaicon dentro de mi modelo
-             validator.seqValidator(this.seqModels, {
-                 model: this.model,
-                 associations: [association]
-             })
- 
-             //Valido si ya existe la asociacion en mi include 
-             const existAssocInclude = validator.includeAssociationVerify(this.config.include, association)
- 
-             if (existAssocInclude) throw new Error(msg.erroMsg.duplicateValue + `Ya existe la asociacion ${association}`)
- 
-             this.config.include.push({ association }) */
-
         } catch (err) {
             throw new Error(err.message)
 
@@ -301,8 +283,6 @@ class QueryConfig {
             if (resultValidator.assocObj) {
                 resultValidator.assocObj.attributes = columnsName
             }
-
-            this.config.attributes = columnsName
 
         } catch (err) {
             throw new Error(err.message)
