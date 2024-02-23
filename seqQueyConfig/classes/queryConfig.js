@@ -358,7 +358,7 @@ class QueryConfig {
             if (order) {
                 const targetOrder = obj.order || (obj.order = []);
 
-                targetOrder.push([`$${columnName}$`, order]); //la modalidad de envolver los nombres de la scolumnas entre $, se hace para que sequelize pueda interopretar sea estrictamente una columna real o un alias asignado
+                targetOrder.push([`${columnName}`, order]); //la modalidad de envolver los nombres de la scolumnas entre $, se hace para que sequelize pueda interopretar sea estrictamente una columna real o un alias asignado
             }
         }
 
